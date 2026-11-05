@@ -1,0 +1,182 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f5f5f5;
+}
+h1 {
+	color: #333;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.editor-container {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+}
+.input-area, .output-area {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #555;
+}
+#code-input {
+	width: 100%;
+	height: 300px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+	font-family: monospace;
+	box-sizing: border-box;
+}
+.button-group {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+.btn {
+	padding: 10px 20px;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+#parse-btn {
+	background-color: #4CAF50;
+}
+#parse-btn:hover {
+	background-color: #45a049;
+}
+#interpret-btn {
+	background-color: #2196F3;
+}
+#interpret-btn:hover {
+	background-color: #1976D2;
+}
+.output-tabs {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+.output-tab {
+	padding: 8px 15px;
+	background-color: #e0e0e0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+.output-tab.active {
+	background-color: #007bff;
+	color: white;
+}
+#tokens-output, #ast-output, #result-output, #errors-output {
+	width: 100%;
+	height: 300px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #f9f9f9;
+	font-family: monospace;
+	overflow-y: auto;
+	box-sizing: border-box;
+	display: none;
+}
+.output-visible {
+	display: block !important;
+}
+.examples {
+	margin-top: 30px;
+}
+.example {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.example-title {
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #333;
+}
+.example-code {
+	background-color: #f0f0f0;
+	padding: 8px;
+	border-radius: 3px;
+	font-family: monospace;
+	white-space: pre;
+	overflow-x: auto;
+}
+.use-example-btn {
+	margin-top: 5px;
+	padding: 5px 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.use-example-btn:hover {
+	background-color: #0069d9;
+}
+.token-type {
+	font-weight: bold;
+	color: #0066cc;
+}
+.token-lexeme {
+	color: #cc6600;
+}
+.token-literal {
+	color: #006600;
+}
+.token-line {
+	color: #666666;
+}
+.error {
+	color: #cc0000;
+	font-weight: bold;
+}
+.runtime-error {
+	color: #dc3545;
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	padding: 8px;
+	border-radius: 4px;
+	margin: 5px 0;
+}
+.success {
+	color: #155724;
+	background-color: #d4edda;
+	border: 1px solid #c3e6cb;
+	padding: 8px;
+	border-radius: 4px;
+	margin: 5px 0;
+}
+.result-value {
+	font-weight: bold;
+	color: #28a745;
+}
+.ast-node {
+	margin-left: 20px;
+}
+.ast-type {
+	font-weight: bold;
+	color: #0066cc;
+}
+.ast-content {
+	color: #333;
+}
