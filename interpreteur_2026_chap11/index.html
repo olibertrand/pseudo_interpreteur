@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpréteur de Pseudo-code Français - Chapitre 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Interpréteur de Pseudo-code Français - Chapitre 11</h1>
+    
+    <div class="container">
+        <div class="editor-container">
+            <div class="input-area">
+                <div class="label">Code pseudo-français:</div>
+                <textarea id="code-input" placeholder="Entrez votre pseudo-code en français ici..."></textarea>
+                <div class="button-group">
+                    <button id="interpret-btn" class="btn">Interpréter</button>
+                </div>
+            </div>
+            <div class="output-area">
+                <div class="output-tabs">
+                    <button class="output-tab active" data-target="result-output">Résultat</button>
+                    <button class="output-tab" data-target="errors-output">Erreurs</button>
+                </div>
+                <div id="result-output" class="output-visible"></div>
+                <div id="errors-output"></div>
+            </div>
+        </div>
+        
+        <div class="examples">
+            <h3>Exemples de pseudo-code français avec fonctions</h3>
+            
+            <div class="example">
+                <div class="example-title">Fonction simple</div>
+                <div class="example-code">fonction saluer(nom)
+    afficher "Bonjour, " + nom + "!";
+fin fonction
+
+saluer("Alice");
+saluer("Bob");</div>
+                <button class="use-example-btn" data-example="1">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Fonction avec retour</div>
+                <div class="example-code">fonction additionner(a, b)
+    retourner a + b;
+fin fonction
+
+variable resultat <- additionner(5, 3);
+afficher "5 + 3 = " + resultat;</div>
+                <button class="use-example-btn" data-example="2">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Fonction récursive (factorielle)</div>
+                <div class="example-code">fonction factorielle(n)
+    si n <= 1 alors
+        retourner 1;
+    fin si
+    retourner n * factorielle(n - 1);
+fin fonction
+
+afficher "5! = " + factorielle(5);
+afficher "10! = " + factorielle(10);</div>
+                <button class="use-example-btn" data-example="3">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Closures</div>
+                <div class="example-code">fonction creerCompteur()
+    variable compte <- 0;
+    fonction incrementer()
+        compte <- compte + 1;
+        retourner compte;
+    fin fonction
+    retourner incrementer;
+fin fonction
+
+variable compteur <- creerCompteur();
+afficher compteur();
+afficher compteur();
+afficher compteur();</div>
+                <button class="use-example-btn" data-example="4">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Fibonacci récursif</div>
+                <div class="example-code">fonction fibonacci(n)
+    si n <= 1 alors
+        retourner n;
+    fin si
+    retourner fibonacci(n - 1) + fibonacci(n - 2);
+fin fonction
+
+pour i de 0 à 10 faire
+    afficher "fib(" + i + ") = " + fibonacci(i);
+fin pour</div>
+                <button class="use-example-btn" data-example="5">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Portée des variables</div>
+                <div class="example-code">variable globale <- "Je suis globale";
+
+fonction tester()
+    variable locale <- "Je suis locale";
+    afficher globale;
+    afficher locale;
+fin fonction
+
+tester();
+afficher globale;</div>
+                <button class="use-example-btn" data-example="6">Utiliser cet exemple</button>
+            </div>
+            
+            <div class="example">
+                <div class="example-title">Fonctions imbriquées</div>
+                <div class="example-code">fonction externe()
+    variable x <- "externe";
+    
+    fonction interne()
+        afficher x;
+    fin fonction
+    
+    interne();
+fin fonction
+
+externe();</div>
+                <button class="use-example-btn" data-example="7">Utiliser cet exemple</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/tokens.js"></script>
+    <script src="js/scanner.js"></script>
+    <script src="js/ast.js"></script>
+    <script src="js/errors.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/environment.js"></script>
+    <script src="js/callable.js"></script>
+    <script src="js/interpreter.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
