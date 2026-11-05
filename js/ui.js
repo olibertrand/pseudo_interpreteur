@@ -116,9 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
             syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
             keymap.of([
                  { key: "Enter", run: indenterNouvelleLigne },
+                // Avant defaultKeymap : il contient déjà Mod-Enter (= Ctrl-Enter hors Mac),
+                // qui insère une ligne vide et masquerait ce raccourci.
+                { key: "Ctrl-Enter", run: () => { interpretCode(); return true; } },
                 ...defaultKeymap,
-                ...historyKeymap,
-                { key: "Ctrl-Enter", run: () => { interpretCode(); return true; } }
+                ...historyKeymap
             ])
         ],
         parent: document.getElementById('code-input')
