@@ -116,9 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
             syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
             keymap.of([
                  { key: "Enter", run: indenterNouvelleLigne },
+                // Avant defaultKeymap : il contient déjà Mod-Enter (= Ctrl-Enter hors Mac),
+                // qui insère une ligne vide et masquerait ce raccourci.
+                { key: "Ctrl-Enter", run: () => { interpretCode(); return true; } },
                 ...defaultKeymap,
-                ...historyKeymap,
-                { key: "Ctrl-Enter", run: () => { interpretCode(); return true; } }
+                ...historyKeymap
             ])
         ],
         parent: document.getElementById('code-input')
@@ -157,6 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
             editorView.dispatch({
                 changes: { from: 0, to: editorView.state.doc.length, insert: examples[exampleId] }
             });
+            // Les boutons sont loin sous l'éditeur : sans ce défilement, le code est bien
+            // chargé mais hors de l'écran, et le clic semble ne rien faire.
+            document.querySelector('.editor-container').scrollIntoView({ behavior: 'smooth' });
+            editorView.focus();
         });
     });
     
