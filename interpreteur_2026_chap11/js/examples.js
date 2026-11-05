@@ -20,7 +20,7 @@ variable resultat <- additionner(5, 3);
 afficher "5 + 3 = " + resultat;`,
     "3": `fonction factorielle(n)
     si n <= 1 alors
-retourner 1;
+        retourner 1;
     fin si
     retourner n * factorielle(n - 1);
 fin fonction
@@ -30,8 +30,8 @@ afficher "10! = " + factorielle(10);`,
     "4": `fonction creerCompteur()
     variable compte <- 0;
     fonction incrementer()
-compte <- compte + 1;
-retourner compte;
+        compte <- compte + 1;
+        retourner compte;
     fin fonction
     retourner incrementer;
 fin fonction
@@ -42,7 +42,7 @@ afficher compteur();
 afficher compteur();`,
     "5": `fonction fibonacci(n)
     si n <= 1 alors
-retourner n;
+        retourner n;
     fin si
     retourner fibonacci(n - 1) + fibonacci(n - 2);
 fin fonction
@@ -64,7 +64,7 @@ afficher globale;`,
     variable x <- "externe";
     
     fonction interne()
-afficher x;
+        afficher x;
     fin fonction
     
     interne();
