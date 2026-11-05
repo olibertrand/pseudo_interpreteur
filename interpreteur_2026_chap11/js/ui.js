@@ -105,6 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', () => {
             const exampleId = btn.getAttribute('data-example');
             codeInput.value = examples[exampleId];
+            // Les boutons sont loin sous la zone de texte : sans ce défilement, le code est
+            // bien chargé mais hors de l'écran, et le clic semble ne rien faire.
+            document.querySelector('.editor-container').scrollIntoView({ behavior: 'smooth' });
+            codeInput.focus({ preventScroll: true });
         });
     });
     
