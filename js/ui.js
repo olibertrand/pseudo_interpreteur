@@ -157,6 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
             editorView.dispatch({
                 changes: { from: 0, to: editorView.state.doc.length, insert: examples[exampleId] }
             });
+            // Les boutons sont loin sous l'éditeur : sans ce défilement, le code est bien
+            // chargé mais hors de l'écran, et le clic semble ne rien faire.
+            document.querySelector('.editor-container').scrollIntoView({ behavior: 'smooth' });
+            editorView.focus();
         });
     });
     
