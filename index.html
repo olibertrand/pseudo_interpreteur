@@ -57,9 +57,9 @@ afficher "5 + 3 = " + resultat;</div>
             <div class="example">
                 <div class="example-title">Fonction récursive (factorielle)</div>
                 <div class="example-code">fonction factorielle(n)
-    si n <= 1 alors
+    si n <= 1 alors {
         retourner 1;
-    fin si
+    }
     retourner n * factorielle(n - 1);
 fin fonction
 
@@ -89,15 +89,15 @@ afficher compteur();</div>
             <div class="example">
                 <div class="example-title">Fibonacci récursif</div>
                 <div class="example-code">fonction fibonacci(n)
-    si n <= 1 alors
+    si n <= 1 alors {
         retourner n;
-    fin si
+    }
     retourner fibonacci(n - 1) + fibonacci(n - 2);
 fin fonction
 
-pour i de 0 à 10 faire
+pour i de 0 à 10 faire {
     afficher "fib(" + i + ") = " + fibonacci(i);
-fin pour</div>
+}</div>
                 <button class="use-example-btn" data-example="5">Utiliser cet exemple</button>
             </div>
             

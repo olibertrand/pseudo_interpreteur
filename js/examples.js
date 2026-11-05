@@ -19,9 +19,9 @@ fin fonction
 variable resultat <- additionner(5, 3);
 afficher "5 + 3 = " + resultat;`,
     "3": `fonction factorielle(n)
-    si n <= 1 alors
+    si n <= 1 alors {
         retourner 1;
-    fin si
+    }
     retourner n * factorielle(n - 1);
 fin fonction
 
@@ -41,15 +41,15 @@ afficher compteur();
 afficher compteur();
 afficher compteur();`,
     "5": `fonction fibonacci(n)
-    si n <= 1 alors
+    si n <= 1 alors {
         retourner n;
-    fin si
+    }
     retourner fibonacci(n - 1) + fibonacci(n - 2);
 fin fonction
 
-pour i de 0 à 10 faire
+pour i de 0 à 10 faire {
     afficher "fib(" + i + ") = " + fibonacci(i);
-fin pour`,
+}`,
     "6": `variable globale <- "Je suis globale";
 
 fonction tester()
